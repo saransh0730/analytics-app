@@ -1,7 +1,16 @@
-import "@mantine/core/styles.css";
-import { MantineProvider } from "@mantine/core";
-import { theme } from "./theme";
+import React from 'react';
+import { MantineProvider } from '@mantine/core';
+import TableComponent from './components/TableComponent';
+import BarChartComponent from './components/BarChartComponent';
 
-export default function App() {
-  return <MantineProvider theme={theme}>App</MantineProvider>;
-}
+const App: React.FC = () => {
+  return (
+    <MantineProvider>
+      <h2 style={{color: '#0077b6', fontFamily:'sans-serif'}}>Indian Agricultural Data Visualization</h2>
+      <TableComponent />
+      <BarChartComponent />
+    </MantineProvider>
+  );
+};
+
+export default App;
