@@ -22,7 +22,7 @@ const BarChartComponent: React.FC = () => {
 
     const crops = Object.keys(cropData);
     const averageYields = crops.map((crop) => {
-      const totalYield = cropData[crop].reduce((acc, val) => acc + val, 0);
+      const totalYield = cropData[crop].reduce((avg, val) => avg + val, 0);
       const numberOfEntries = cropData[crop].length;
       return (totalYield / numberOfEntries).toFixed(2);
     });
@@ -59,6 +59,10 @@ const BarChartComponent: React.FC = () => {
           type: 'bar',
           data: averageYields,
           itemStyle: { color: '#0077b6' },
+          showBackground: true,
+          backgroundStyle: {
+            color: 'rgba(122, 177, 237, 0.2)'
+          }
         },
       ],
     };
